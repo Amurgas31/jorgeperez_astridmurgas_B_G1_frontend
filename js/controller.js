@@ -1,3 +1,28 @@
+// js/controller.js
+
+//Elementos del DOM
+const cardsContainer = document.getElementById("contenedor-peliculas");
+const peliForn = document.getElementById("peliForms");
+const peliFormModal = new bootstrap.Modal(document.getElementById('peliModal'));
+let allPelis = [];
+
+function rederCards(pelis){
+    cardsContainer.innerHTML = '';
+    if (pelis.length === 0) 
+    {
+        cardsContainer.innerHTML `<div class="col-12 text-center text-light p-5">
+        <i class="bi bi-x-octagon-fill display-4 text-warning"></i>
+        <h3 class="mt-3">No se encontraron películas</h3>
+        <p>Crea uno nuevo para empezar</p>
+        </div>`;
+        return;
+    }
+
+    pelis.forEach(peli => {
+        
+    });
+}
+
 const peliculasData = [
   {
     id_pelicula: 1,
@@ -69,6 +94,10 @@ function crearTarjetaPelicula(pelicula) {
         </div>
     `;
 }
+
+async function abrirModalCreacion(){
+
+}
  
  
 // --- FUNCIÓN PRINCIPAL PARA INYECTAR EN EL DOM ---
@@ -88,4 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
     //'fetch()'
     // 'mostrarPeliculas(respuesta_api.json())'.
     mostrarPeliculas(peliculasData);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('crear-btn');
+    if (btn){
+        btn.addEventListener('click', abrirModalCreacion);
+    }
 });

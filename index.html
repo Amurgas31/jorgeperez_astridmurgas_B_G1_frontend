@@ -14,20 +14,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.24.0/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #464646;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html"> 🎬 Películas</a>
-            <button class="btn btn-outline-light d-none d-lg-block crear-btn"> + Añadir Película</button>
+            <button class="btn btn-outline-light d-none d-lg-block crear-btn" id="crear-btn"> + Añadir Película</button>
         </div>
     </nav>
 
     <main class="container my-5 p-4 rounded-3 bg-dark">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="h3 m-0 text-warning"> Películas Disponibles </h1>
-            <button class="btn btn-outline-light d-lg-none crear-btn"> + Nueva Película</button>
+            <button class="btn btn-outline-light d-lg-none crear-btn" id="crear-btn"> + Nueva Película</button>
         </div>
 
         <div id="contenedor-peliculas" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
@@ -46,7 +53,7 @@
                     <h5 class=" modal-title fw-bold" id="peliModalLabel"> Cear nueva Película</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="peliForms">
+                <form id="peliForm">
                     <div class="modal-body">
                         <input type="hidden" id="peliId" name="id">
                         <div class="mb-3">
@@ -56,8 +63,34 @@
                             <input type="text" class="form-control" id="titulo" maxlength="200" required>
                         </div>
 
-                        <div></div>
-                        <!-- Seguir con los demas -->
+                        <div class="mb-3">
+                            <label for="director" class="form-label">Director
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="director" required maxlength="120">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="genero" class="form-label">Género
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="genero" required maxlength="60">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="estreno" class="form-label">Año de Estreno
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control" id="estreno" required min="1000">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="duracion" class="form-label">Duración (minutos)
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="number" class="form-control" id="duracion" required min="1">
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

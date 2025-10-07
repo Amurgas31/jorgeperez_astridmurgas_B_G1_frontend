@@ -1,0 +1,29 @@
+body, html, main {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #464646;
+    min-height: 100vh;
+}
+
+body {
+    padding-bottom: 70px;
+}
+
+.navbar-brand{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.book-card{
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75 rem;
+    transition: 0.3s ease;
+}
+
+.book-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.card-title{
+    color: #1a75ff;
+}
