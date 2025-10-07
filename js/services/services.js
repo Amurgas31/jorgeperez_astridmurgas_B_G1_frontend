@@ -1,6 +1,6 @@
 // js/services/indexService.js
  
-const API_URL = "https://retoolapi.dev/bBfQ8q/apipelis"; // URL base del recurso
+const API_URL = "https://localhost:8080/api"; // URL base del recurso
  
 // --- Función de Utilidad (SweetAlert2) ---
 export function showFeedback(title, message, icon) {
@@ -17,8 +17,13 @@ export function showFeedback(title, message, icon) {
 // --- Funciones CRUD ---
 export async function getAll() {
     try {
-        const res = await fetch(API_URL);
-        if (!res.ok) throw new Error('Error al obtener las películas.');
+        const res = await fetch(`${API_URL}/peliculas/getPeliculas`, {
+            method: "GET",
+        });
+
+        if (!res.ok) {
+            throw new Error(`Error al obtener las películas: ${res.statusText}`);
+        }
         return res.json();
     } catch (error) {
         console.error('Fallo getAll:', error);
@@ -29,7 +34,7 @@ export async function getAll() {
  
 export async function create(payload) {
     try {
-        const res = await fetch(API_URL, {
+        const res = await fetch(`${API_URL}/peliculas/postPelicula`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
@@ -45,7 +50,7 @@ export async function create(payload) {
  
 export async function update(id, payload) {
     try {
-        const res = await fetch(`${API_URL}/${id}`, {
+        const res = await fetch(`${API_URL}/peliculas/updatePelicula/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
@@ -61,7 +66,7 @@ export async function update(id, payload) {
  
 export async function deleteA(id) {
     try {
-        const res = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+        const res = await fetch(`${API_URL}/peliculas/deletePelicula/${id}`, { method: "DELETE" });
         if (!res.ok) throw new Error('Error al eliminar la película.');
         showFeedback("¡Eliminado!", "La película ha sido borrada.", 'success');
     } catch (error) {
