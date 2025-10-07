@@ -116,7 +116,7 @@ function crearTarjetaPelicula(pelicula) {
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title d-flex justify-content-between align-items-center">
                         ${pelicula.titulo} 
-                        <span class="badge bg-secondary">${pelicula.anoEstreno}</span>
+                        <span class="badge bg-info">${pelicula.anoEstreno}</span>
                     </h5>
                     <p class="card-text mb-2">
                         <strong>Director:</strong> ${pelicula.director}
