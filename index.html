@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.24.0/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"> 🎬 Películas</a>
+            <button class="btn btn-outline-light d-none d-lg-block crear-btn"> + Añadir Película</button>
+        </div>
+    </nav>
+
+    <main class="container my-5 p-4 rounded-3 bg-dark">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h3 m-0 text-warning"> Películas Disponibles </h1>
+            <button class="btn btn-outline-light d-lg-none crear-btn"> + Nueva Película</button>
+        </div>
+
+        <div id="contenedor-peliculas" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-dark fixed-bottom">
+        <div class="container text-center">
+            <span class="text-white-50"> Películas Final Boss &copy;2025 | Instituto Técnico Ricaldone</span>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="peliModal" tabindex="-1" aria-labelledby="peliModal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class=" modal-title fw-bold" id="peliModalLabel"> Cear nueva Película</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="peliForms">
+                    <div class="modal-body">
+                        <input type="hidden" id="peliId" name="id">
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label"> Título de la Película
+                                <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="titulo" maxlength="200" required>
+                        </div>
+
+                        <div></div>
+                        <!-- Seguir con los demas -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-warning fw-bold" id="submitBtn">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.24.0/dist/sweetalert2.all.min.js"></script>
+</body>
+
+</html>
