@@ -51,7 +51,7 @@ export async function create(payload) {
 export async function update(id, payload) {
     try {
         const res = await fetch(`${API_URL}/peliculas/updatePelicula/${id}`, {
-            method: "PUT",
+            method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
         });
