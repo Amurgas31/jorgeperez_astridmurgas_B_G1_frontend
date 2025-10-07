@@ -1,6 +1,6 @@
 // js/services/indexService.js
  
-const API_URL = "https://localhost:8080/api"; // URL base del recurso
+const API_URL = "http://localhost:8080/api"; // URL base del recurso
  
 // --- Función de Utilidad (SweetAlert2) ---
 export function showFeedback(title, message, icon) {

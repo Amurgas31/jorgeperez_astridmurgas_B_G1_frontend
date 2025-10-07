@@ -28,7 +28,7 @@ async function fetchPeliculas() {
 async function handleSubmit(event) {
     event.preventDefault();
 
-    // 1. Capturar datos del formulario
+    // Capturar datos del formulario
     const peliId = document.getElementById('peliId').value; // ID oculto
     const payload = {
         // Mapear IDs de campos a nombres de columnas de la base de datos
@@ -63,7 +63,7 @@ function handleDeleteClick(id) {
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#dc3545', // Color Danger
-        cancelButtonColor: '#1a75ff',  // Color Secondary
+        cancelButtonColor: '#1a75ff',  // Color
         confirmButtonText: 'Sí, ¡bórralo!',
         cancelButtonText: 'Cancelar'
     }).then(async (result) => {
