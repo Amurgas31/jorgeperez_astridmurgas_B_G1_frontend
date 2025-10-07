@@ -32,6 +32,7 @@ async function handleSubmit(event) {
     const peliId = document.getElementById('peliId').value; // ID oculto
     const payload = {
         // Mapear IDs de campos a nombres de columnas de la base de datos
+        id: document.getElementById('peliId').value,
         titulo: document.getElementById('titulo').value,
         director: document.getElementById('director').value,
         genero: document.getElementById('genero').value,
